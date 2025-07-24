@@ -21,11 +21,11 @@ func main() {
 	DB := postgres.Init()
 
 	// HTTP
-	HTTP(DB)
+	RunHTTP(DB)
 
 }
 
-func HTTP(DB *pgxpool.Pool) {
+func RunHTTP(DB *pgxpool.Pool) {
 	app := fiber.New(
 		fiber.Config{
 			ErrorHandler: exception.ErrorHandler,
